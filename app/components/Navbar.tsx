@@ -26,11 +26,10 @@ export default function Navbar() {
   }, [isOpen]);
 
   const navLinks = [
-    { name: "Home", href: "#" },
-    { name: "Services", href: "#services" },
-    { name: "Menu", href: "#menu" },
-    { name: "About", href: "#about" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/" },
+    { name: "Gallery", href: "/gallery" },
+    { name: "About Us", href: "/about" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
@@ -59,7 +58,7 @@ export default function Navbar() {
 
 
             {/* Custom SVG Hamburger */}
-            <label className={`hamburger z-50 relative ${!isScrolled && !isOpen ? "text-maroon-dark md:text-cream" : "text-maroon-dark"}`}>
+            <label className="hamburger z-50 relative text-maroon-dark">
               <input
                 type="checkbox"
                 checked={isOpen}

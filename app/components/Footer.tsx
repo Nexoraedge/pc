@@ -41,10 +41,10 @@ export default function Footer() {
               Elevating events with pure vegetarian luxury. From grand destination weddings to intimate private galas, we deliver impeccable hospitality and unforgettable flavors.
             </p>
             <div className="flex items-center gap-4 pt-2">
-              <a href="#" className="w-10 h-10 rounded-full border border-gold/20 flex items-center justify-center hover:bg-gold/10 hover:text-gold transition-colors">
+              <a href="https://www.instagram.com/parshwanath_caterer_and_events?igsi=OXdtbXl4eDZ3djNv&utm_source=qr" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-gold/20 flex items-center justify-center hover:bg-gold/10 hover:text-gold transition-colors">
                 <InstagramIcon />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full border border-gold/20 flex items-center justify-center hover:bg-gold/10 hover:text-gold transition-colors">
+              <a href="https://www.facebook.com/share/1HUyoMMPJp/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-gold/20 flex items-center justify-center hover:bg-gold/10 hover:text-gold transition-colors">
                 <FacebookIcon />
               </a>
               <a href="#" className="w-10 h-10 rounded-full border border-gold/20 flex items-center justify-center hover:bg-gold/10 hover:text-gold transition-colors">
