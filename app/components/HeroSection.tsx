@@ -129,7 +129,7 @@ export default function HeroSection() {
       {/* 2. Waiter Foreground Layer */}
       {/* Mobile: z-20 (between maroon and cream waves). Desktop: z-30 (above all waves) */}
       <div
-        className="absolute bottom-0 right-0 w-[85%] md:w-full lg:w-[60%] h-[47%] md:h-full z-10 md:z-30 flex items-end justify-end pointer-events-none"
+        className="absolute bottom-0 right-0 w-[85%] md:w-full lg:w-[60%] h-[47%] md:h-full z-10  flex items-end justify-end pointer-events-none"
       >
         <img
           src="/images/waiter.png"

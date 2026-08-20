@@ -60,7 +60,7 @@ body {
 
 .line {
   fill: none;
-  stroke: var(--color-maroon);
+  stroke: currentColor;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 3;
