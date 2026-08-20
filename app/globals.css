@@ -23,6 +23,7 @@
   --font-serif: var(--font-playfair), Georgia, serif;
   --font-mono: var(--font-jetbrains), monospace;
   --font-display: var(--font-bricolage), var(--font-archivo), sans-serif;
+  --font-script: var(--font-great-vibes), cursive;
 }
 
 body {

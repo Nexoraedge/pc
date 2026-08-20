@@ -39,43 +39,30 @@ export default function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-          isScrolled || isOpen ? "glass py-4 shadow-sm" : "bg-transparent py-6"
-        }`}
+        className={`fixed top-0  left-0 w-full z-50 transition-all duration-300 ${isScrolled || isOpen ? "glass py-4 shadow-sm" : "bg-transparent py-6"
+          }`}
       >
         <div className="container mx-auto px-6 flex justify-between items-center relative z-50">
           <a href="#" className="flex items-center gap-2">
-            {/* Desktop / Tablet Logo (Rectangular) */}
-            <Image 
-              src="/logo/logo-text.png" 
-              alt="Parshwanath Caterers" 
-              width={200} 
-              height={60} 
-              className="hidden sm:block object-contain h-12 w-auto" 
-              priority
-            />
-            {/* Mobile Logo (1x1 Square) */}
-            <Image 
-              src="/logo/logo1x1.png" 
-              alt="Parshwanath Caterers" 
-              width={60} 
-              height={60} 
-              className="block sm:hidden object-contain h-10 w-auto" 
+            <Image
+              src="/logo/logo-text.png"
+              alt="Parshwanath Caterers"
+              width={200}
+              height={60}
+              className="object-contain h-10 md:h-12 w-auto"
               priority
             />
           </a>
 
           <div className="flex items-center space-x-6">
-            <button className="hidden sm:block px-6 py-2 bg-maroon text-cream rounded-full font-medium hover:bg-maroon-dark transition-all hover:scale-105 shadow-md">
-              Book Us
-            </button>
-            
+
+
             {/* Custom SVG Hamburger */}
             <label className="hamburger z-50 relative">
-              <input 
-                type="checkbox" 
+              <input
+                type="checkbox"
                 checked={isOpen}
-                onChange={() => setIsOpen(!isOpen)} 
+                onChange={() => setIsOpen(!isOpen)}
               />
               <svg viewBox="0 0 32 32">
                 <path
@@ -117,15 +104,8 @@ export default function Navbar() {
                   {link.name}
                 </motion.a>
               ))}
-              
-              <motion.button 
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.8 }}
-                className="mt-8 sm:hidden px-10 py-4 bg-maroon text-cream rounded-full font-medium shadow-xl text-xl"
-              >
-                Book Us
-              </motion.button>
+
+
             </div>
           </motion.div>
         )}
