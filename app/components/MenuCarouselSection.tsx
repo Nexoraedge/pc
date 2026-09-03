@@ -42,7 +42,7 @@ export default function MenuCarouselSection() {
             </p>
           </div>
           <Link
-            href="#"
+            href="/contact"
             className="group inline-flex items-center justify-center gap-2 text-xs md:text-sm font-semibold text-gold hover:text-cream transition-colors uppercase tracking-widest px-6 py-3 border border-gold/40 rounded-full hover:bg-gold/10 whitespace-nowrap"
           >
             Plan Your Event
@@ -55,7 +55,11 @@ export default function MenuCarouselSection() {
 
             {/* Center 3D Avatar */}
             <div className={`${styles.centerAvatar}`}>
-              <img
+              <motion.img
+                initial={{ y: 150, opacity: 0, scale: 0.8 }}
+                whileInView={{ y: 0, opacity: 1, scale: 1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.7, type: "spring", bounce: 0.5 }}
                 src="/images/waiter-3.png"
                 alt="Master Chef"
                 className="w-full h-full object-contain drop-shadow-[0_0_60px_rgba(212,175,55,0.25)]"
@@ -69,16 +73,24 @@ export default function MenuCarouselSection() {
                   className={`${styles.card} group cursor-pointer`}
                   style={{ "--index": i } as React.CSSProperties}
                 >
-                  <div className={styles.imgWrapper}>
-                    <span className="text-3xl md:text-4xl transition-transform duration-500 group-hover:scale-125 inline-block drop-shadow-md">
-                      {item.emoji}
-                    </span>
-                  </div>
-                  <div className={styles.titleWrapper}>
-                    <p className="text-[9px] md:text-[10px] font-light text-cream/90 text-center tracking-[0.2em] uppercase leading-tight">
-                      {item.label}
-                    </p>
-                  </div>
+                  <motion.div
+                    initial={{ y: 50, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.6, delay: 0.3 + (i * 0.05), type: "spring" }}
+                    className="w-full h-full flex flex-col items-center justify-center"
+                  >
+                    <div className={styles.imgWrapper}>
+                      <span className="text-3xl md:text-4xl transition-transform duration-500 group-hover:scale-125 inline-block drop-shadow-md">
+                        {item.emoji}
+                      </span>
+                    </div>
+                    <div className={styles.titleWrapper}>
+                      <p className="text-[9px] md:text-[10px] font-light text-cream/90 text-center tracking-[0.2em] uppercase leading-tight">
+                        {item.label}
+                      </p>
+                    </div>
+                  </motion.div>
                 </div>
               );
             })}

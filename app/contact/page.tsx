@@ -32,10 +32,10 @@ export default function ContactPage() {
   const handleWhatsAppSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const phoneNumber = "919982310686";
-    
+
     // Construct the message
     const message = `Hello Parshwanath Caterers!%0A%0A*New Event Inquiry:*%0A- *Name:* ${formData.firstName} ${formData.lastName}%0A- *Phone:* ${formData.phone}%0A- *Event Type:* ${formData.eventType}%0A- *Details:* ${formData.details}%0A%0ALooking forward to hearing from you!`;
-    
+
     // Open WhatsApp
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
   };
@@ -49,7 +49,7 @@ export default function ContactPage() {
         {/* Subtle Background Elements */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-maroon-dark/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-gold/10 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
-        
+
         <div className="relative z-10 max-w-4xl mx-auto">
           <p className="text-sm font-bold uppercase tracking-widest text-maroon-dark mb-4 flex items-center justify-center gap-2">
             <span className="w-8 h-[1px] bg-gold"></span>
@@ -68,9 +68,9 @@ export default function ContactPage() {
       {/* 2. Contact Interface & Form */}
       <section className="py-12 px-6 md:px-12 lg:px-20 relative z-20">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-20">
-          
+
           {/* Left Column: Contact Details */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -78,7 +78,7 @@ export default function ContactPage() {
           >
             <div>
               <h3 className="font-display text-3xl text-maroon-dark mb-8">Reach Out Directly</h3>
-              
+
               <div className="space-y-8">
                 {/* Address */}
                 <div className="flex items-start gap-4">
@@ -138,7 +138,7 @@ export default function ContactPage() {
           </motion.div>
 
           {/* Right Column: Inquiry Form */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -152,12 +152,12 @@ export default function ContactPage() {
                 {/* First Name */}
                 <div className="space-y-2">
                   <label className="text-xs font-bold uppercase tracking-widest text-maroon-dark/80">First Name</label>
-                  <input type="text" required value={formData.firstName} onChange={(e) => setFormData({...formData, firstName: e.target.value})} className="w-full bg-cream/50 border border-maroon-dark/10 rounded-lg px-4 py-3 focus:outline-none focus:border-gold transition-colors" placeholder="John" />
+                  <input type="text" required value={formData.firstName} onChange={(e) => setFormData({ ...formData, firstName: e.target.value })} className="w-full bg-cream/50 border border-maroon-dark/10 rounded-lg px-4 py-3 focus:outline-none focus:border-gold transition-colors" placeholder="John" />
                 </div>
                 {/* Last Name */}
                 <div className="space-y-2">
                   <label className="text-xs font-bold uppercase tracking-widest text-maroon-dark/80">Last Name</label>
-                  <input type="text" value={formData.lastName} onChange={(e) => setFormData({...formData, lastName: e.target.value})} className="w-full bg-cream/50 border border-maroon-dark/10 rounded-lg px-4 py-3 focus:outline-none focus:border-gold transition-colors" placeholder="Doe" />
+                  <input type="text" value={formData.lastName} onChange={(e) => setFormData({ ...formData, lastName: e.target.value })} className="w-full bg-cream/50 border border-maroon-dark/10 rounded-lg px-4 py-3 focus:outline-none focus:border-gold transition-colors" placeholder="Doe" />
                 </div>
               </div>
 
@@ -165,19 +165,19 @@ export default function ContactPage() {
                 {/* Email */}
                 <div className="space-y-2">
                   <label className="text-xs font-bold uppercase tracking-widest text-maroon-dark/80">Email Address</label>
-                  <input type="email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="w-full bg-cream/50 border border-maroon-dark/10 rounded-lg px-4 py-3 focus:outline-none focus:border-gold transition-colors" placeholder="john@example.com" />
+                  <input type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className="w-full bg-cream/50 border border-maroon-dark/10 rounded-lg px-4 py-3 focus:outline-none focus:border-gold transition-colors" placeholder="john@example.com" />
                 </div>
                 {/* Phone */}
                 <div className="space-y-2">
                   <label className="text-xs font-bold uppercase tracking-widest text-maroon-dark/80">Phone Number</label>
-                  <input type="tel" required value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} className="w-full bg-cream/50 border border-maroon-dark/10 rounded-lg px-4 py-3 focus:outline-none focus:border-gold transition-colors" placeholder="+91 98765 43210" />
+                  <input type="tel" required value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className="w-full bg-cream/50 border border-maroon-dark/10 rounded-lg px-4 py-3 focus:outline-none focus:border-gold transition-colors" placeholder="+91 98765 43210" />
                 </div>
               </div>
 
               {/* Event Type */}
               <div className="space-y-2">
                 <label className="text-xs font-bold uppercase tracking-widest text-maroon-dark/80">Event Type</label>
-                <select value={formData.eventType} onChange={(e) => setFormData({...formData, eventType: e.target.value})} className="w-full bg-cream/50 border border-maroon-dark/10 rounded-lg px-4 py-3 focus:outline-none focus:border-gold transition-colors text-maroon-dark/70">
+                <select value={formData.eventType} onChange={(e) => setFormData({ ...formData, eventType: e.target.value })} className="w-full bg-cream/50 border border-maroon-dark/10 rounded-lg px-4 py-3 focus:outline-none focus:border-gold transition-colors text-maroon-dark/70">
                   <option>Wedding</option>
                   <option>Corporate Event</option>
                   <option>Birthday / Anniversary</option>
@@ -188,7 +188,7 @@ export default function ContactPage() {
               {/* Message */}
               <div className="space-y-2">
                 <label className="text-xs font-bold uppercase tracking-widest text-maroon-dark/80">Event Details</label>
-                <textarea rows={4} required value={formData.details} onChange={(e) => setFormData({...formData, details: e.target.value})} className="w-full bg-cream/50 border border-maroon-dark/10 rounded-lg px-4 py-3 focus:outline-none focus:border-gold transition-colors resize-none" placeholder="Tell us about your event, estimated guest count, and dates..."></textarea>
+                <textarea rows={4} required value={formData.details} onChange={(e) => setFormData({ ...formData, details: e.target.value })} className="w-full bg-cream/50 border border-maroon-dark/10 rounded-lg px-4 py-3 focus:outline-none focus:border-gold transition-colors resize-none" placeholder="Tell us about your event, estimated guest count, and dates..."></textarea>
               </div>
 
               {/* Submit */}
@@ -202,19 +202,53 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* Booking FAQs */}
+      <section className="py-24 px-6 md:px-12 lg:px-20 bg-cream/50 border-t border-maroon-dark/10">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="font-display text-4xl md:text-5xl text-maroon-dark mb-4">
+              Booking <span className="font-script text-gold italic">Questions</span>
+            </h2>
+            <p className="text-maroon-dark/70 text-lg">Common questions about reserving Parshwanath Caterers for your event.</p>
+          </div>
+
+          <div className="space-y-6">
+            <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-maroon-dark/5">
+              <h3 className="font-display text-2xl text-maroon-dark mb-3">How far in advance should we book?</h3>
+              <p className="text-maroon-dark/80">For weddings and large destination events, we highly recommend booking <strong>3 to 6 months in advance</strong> to secure your dates, as the luxury wedding season in Jaipur gets fully booked very quickly.</p>
+            </div>
+
+            <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-maroon-dark/5">
+              <h3 className="font-display text-2xl text-maroon-dark mb-3">Do you offer food tasting sessions?</h3>
+              <p className="text-maroon-dark/80">Yes, absolutely! We believe you should experience our culinary excellence firsthand. We arrange exclusive tasting sessions for clients once the initial event consultation is complete.</p>
+            </div>
+
+            <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-maroon-dark/5">
+              <h3 className="font-display text-2xl text-maroon-dark mb-3">What is the minimum guest count you cater for?</h3>
+              <p className="text-maroon-dark/80">Because we focus on premium, grand setups with live counters and luxury dining, we typically cater to events with a <strong>minimum of 50 guests</strong>. For smaller, highly exclusive private parties, please reach out to discuss custom options.</p>
+            </div>
+
+            <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-maroon-dark/5">
+              <h3 className="font-display text-2xl text-maroon-dark mb-3">Do you provide the buffet setup and counters?</h3>
+              <p className="text-maroon-dark/80">Yes! We provide complete end-to-end luxury catering setups. This includes premium buffet counters, elegant live station decor, exotic fruit displays, and all necessary serving equipment to make your event look magnificent.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 3. Google Maps Embed */}
       <section className="mt-12 w-full h-[500px] relative bg-maroon-dark/5 grayscale hover:grayscale-0 transition-all duration-700">
         <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14227.464731306013!2d75.8239088!3d26.9200427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db14b1b369c73%3A0x6b107e3a968a3560!2sSurajpole%20Gate!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d222.34072698358764!2d75.84574361865361!3d26.920893282878126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db7900966022b%3A0xcbc7d3cd2f9f0a61!2sParshwanath%20Caterers!5e0!3m2!1sen!2sin!4v1788419649552!5m2!1sen!2sin" 
           width="100%" 
           height="100%" 
           style={{ border: 0 }} 
           allowFullScreen 
           loading="lazy" 
           referrerPolicy="no-referrer-when-downgrade"
+          title="Parshwanath Caterers Location"
           className="absolute inset-0"
-        ></iframe>
-        {/* Overlay for pure aesthetics - clicking map removes it mostly */}
+        />
         <div className="absolute inset-0 bg-maroon-dark/10 pointer-events-none mix-blend-overlay"></div>
       </section>
 

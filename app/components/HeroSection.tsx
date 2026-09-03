@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Utensils, Play } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function HeroSection() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -33,7 +34,7 @@ export default function HeroSection() {
       >
         <div
           className="w-full h-full bg-cover bg-center bg-no-repeat opacity-60"
-          style={{ backgroundImage: "url('/images/bg-hero.png')" }} 
+          style={{ backgroundImage: "url('/images/bg-hero.png')" }}
         />
         {/* Light cream gradient overlay for extreme readability and luxury feel */}
         <div className="absolute inset-0 bg-gradient-to-b from-cream/90 via-cream/60 to-cream/95" />
@@ -63,7 +64,7 @@ export default function HeroSection() {
 
           {/* Hidden SEO Text */}
           <p className="sr-only">
-            Exquisite culinary experiences for weddings and corporate events. 100% vegetarian, authentic, and unforgettable.
+            The best pure veg catering service in Jaipur. Jain catering, wedding catering, and luxury corporate events. 100% vegetarian.
           </p>
 
           <div className="mt-8 md:mt-12 flex flex-col sm:flex-row items-center gap-4 md:gap-8">
@@ -92,7 +93,7 @@ export default function HeroSection() {
           transition={{ delay: 0.5, duration: 0.8 }}
           className="w-16 md:w-20 lg:w-24 h-24 md:h-32 lg:h-40 rounded-full overflow-hidden border-2 border-white shadow-xl relative"
         >
-          <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Chef preparing food" className="w-full h-full object-cover" />
+          <Image src="/gallery-photos/Live_Tawa_sabji.jpeg" alt="Live Catering" fill sizes="100px" className="object-cover" />
         </motion.div>
 
         {/* Pill 2 (Taller) */}
@@ -102,7 +103,7 @@ export default function HeroSection() {
           transition={{ delay: 0.7, duration: 0.8 }}
           className="w-16 md:w-24 lg:w-28 h-32 md:h-48 lg:h-56 rounded-full overflow-hidden border-2 border-white shadow-xl relative mb-2 md:mb-6"
         >
-          <img src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Kitchen staff plating" className="w-full h-full object-cover" />
+          <Image src="/gallery-photos/stall.jpeg" alt="Luxury Table Setup" fill sizes="120px" className="object-cover" />
         </motion.div>
 
         {/* Pill 3 (Highest - Center Focus) */}
@@ -112,7 +113,7 @@ export default function HeroSection() {
           transition={{ delay: 0.9, duration: 0.8 }}
           className="w-20 md:w-28 lg:w-36 h-40 md:h-56 lg:h-72 rounded-full overflow-hidden border-4 border-white shadow-[0_10px_40px_rgba(0,0,0,0.15)] relative mb-6 md:mb-12"
         >
-          <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Gourmet vegetarian dish" className="w-full h-full object-cover" />
+          <Image src="/gallery-photos/Fruit_Counter.jpeg" alt="Fruit Counter Display" fill sizes="150px" className="object-cover" />
         </motion.div>
 
         {/* Pill 4 (Medium) */}
@@ -122,18 +123,18 @@ export default function HeroSection() {
           transition={{ delay: 1.1, duration: 0.8 }}
           className="w-16 md:w-24 lg:w-28 h-32 md:h-48 lg:h-56 rounded-full overflow-hidden border-2 border-white shadow-xl relative mb-2 md:mb-6"
         >
-          <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Catering setup" className="w-full h-full object-cover" />
+          <Image src="/gallery-photos/Counter.jpeg" alt="Premium Event Setup" fill sizes="120px" className="object-cover" />
         </motion.div>
-        
+
         {/* Pill 5 (Logo/Text) */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.3, duration: 0.8 }}
-          className="w-16 md:w-20 lg:w-24 h-24 md:h-32 lg:h-40 rounded-full overflow-hidden border-2 border-white shadow-xl relative bg-maroon-dark flex items-center justify-center flex-col"
+          className="w-16 md:w-20 lg:w-24 h-24 md:h-32 lg:h-40 rounded-full overflow-hidden border-2 border-white relative  flex items-center justify-center flex-col"
         >
-          <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Texture" className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-luminosity" />
-          <span className="relative z-10 font-display text-4xl md:text-5xl text-cream font-bold">P</span>
+          <Image src="/gallery-photos/Table-3.jpeg" alt="Texture" fill sizes="100px" className="object-cover mix-blend-luminosity" />
+
         </motion.div>
 
       </div>

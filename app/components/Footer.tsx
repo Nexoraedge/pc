@@ -25,17 +25,17 @@ export default function Footer() {
   return (
     <footer className="bg-[#120508] text-cream/70 pt-20 pb-10 border-t border-gold/10">
       <div className="container mx-auto px-6 md:px-12 lg:px-20">
-        
+
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
-          
+
           {/* Column 1: Brand */}
           <div className="lg:col-span-1 space-y-6">
             {/* If the logo is dark text, invert it to white or brightness-200 */}
-            <img 
-              src="/logo/logo-text.png" 
-              alt="Parshwanath Caterers" 
-              className="h-12 w-auto brightness-0 invert opacity-90" 
+            <img
+              src="/logo/logo-text.png"
+              alt="Parshwanath Caterers"
+              className="h-12 w-auto brightness-0 invert opacity-90"
             />
             <p className="text-sm leading-relaxed">
               Elevating events with pure vegetarian luxury. From grand destination weddings to intimate private galas, we deliver impeccable hospitality and unforgettable flavors.
@@ -57,23 +57,23 @@ export default function Footer() {
           <div className="space-y-6 lg:pl-10">
             <h4 className="text-gold font-bold tracking-widest uppercase text-sm">Explore</h4>
             <ul className="space-y-4 text-sm">
-              <li><Link href="#" className="hover:text-gold transition-colors">Our Heritage</Link></li>
-              <li><Link href="#" className="hover:text-gold transition-colors">Event Expertise</Link></li>
-              <li><Link href="#" className="hover:text-gold transition-colors">The Gallery</Link></li>
-              <li><Link href="#" className="hover:text-gold transition-colors">Client Love</Link></li>
-              <li><Link href="#" className="hover:text-gold transition-colors">Request a Tasting</Link></li>
+              <li><Link href="/about" className="hover:text-gold transition-colors">Our Heritage</Link></li>
+              <li><Link href="/" className="hover:text-gold transition-colors">Event Expertise</Link></li>
+              <li><Link href="/gallery" className="hover:text-gold transition-colors">The Gallery</Link></li>
+              <li><Link href="/contact" className="hover:text-gold transition-colors">Client Love</Link></li>
+              <li><Link href="/contact" className="hover:text-gold transition-colors">Request a Tasting</Link></li>
             </ul>
           </div>
 
           {/* Column 3: Event Types */}
           <div className="space-y-6">
             <h4 className="text-gold font-bold tracking-widest uppercase text-sm">Expertise</h4>
-            <ul className="space-y-4 text-sm">
-              <li><Link href="#" className="hover:text-gold transition-colors">Grand Weddings</Link></li>
-              <li><Link href="#" className="hover:text-gold transition-colors">Corporate Galas</Link></li>
-              <li><Link href="#" className="hover:text-gold transition-colors">Destination Events</Link></li>
-              <li><Link href="#" className="hover:text-gold transition-colors">Private Soirees</Link></li>
-              <li><Link href="#" className="hover:text-gold transition-colors">Live Counters</Link></li>
+            <ul className="space-y-4 text-sm text-cream/70">
+              <li>Grand Weddings</li>
+              <li>Corporate Galas</li>
+              <li>Destination Events</li>
+              <li>Private Soirees</li>
+              <li>Live Counters</li>
             </ul>
           </div>
 
@@ -83,7 +83,7 @@ export default function Footer() {
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-gold shrink-0 mt-0.5" />
-                <span>123 Luxury Lane, Royal Banquet Street,<br />City, State 123456</span>
+                <span>B-18, Mohanbadi, Surajpole gate, Jaipur, Rajasthan - 302003</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-gold shrink-0" />
@@ -101,14 +101,14 @@ export default function Footer() {
         {/* Sub-Footer */}
         <div className="border-t border-cream/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs md:text-sm">
           <div className="text-cream/50 text-center md:text-left">
-            <p>&copy; {new Date().getFullYear()} Parshwanath Traders. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Parshwanath Caterers & Events. All rights reserved.</p>
           </div>
-          
+
           <div className="text-cream/50 text-center md:text-right flex items-center gap-1">
             <span>Designed by</span>
-            <a 
-              href="https://dhonidev-ai.vercel.app/" 
-              target="_blank" 
+            <a
+              href="https://dhonidev-ai.vercel.app/"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-gold font-semibold hover:text-cream transition-colors"
             >
@@ -116,7 +116,7 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        
+
       </div>
     </footer>
   );

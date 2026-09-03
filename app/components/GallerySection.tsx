@@ -3,12 +3,13 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const GALLERY_IMAGES = [
-  { src: "https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", alt: "Gourmet Dessert", span: "md:col-span-2 md:row-span-2" },
-  { src: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", alt: "Elegant Plating", span: "md:col-span-1 md:row-span-1" },
-  { src: "https://images.unsplash.com/photo-1547496502-affa22d38842?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", alt: "Salad Setup", span: "md:col-span-1 md:row-span-1" },
-  { src: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", alt: "Healthy Bowls", span: "md:col-span-2 md:row-span-1" },
+  { src: "/gallery-photos/Round-tale-decor.jpeg", alt: "Magnificent Banquet Design", span: "md:col-span-2 md:row-span-2" },
+  { src: "/gallery-photos/Stall.jpeg", alt: "Elegant Buffet Setup", span: "md:col-span-1 md:row-span-1" },
+  { src: "/gallery-photos/Fruit_Chaat.jpeg", alt: "Artisanal Exotic Fruit", span: "md:col-span-1 md:row-span-1" },
+  { src: "/gallery-photos/Table-3.jpeg", alt: "Royal Wedding Arrangements", span: "md:col-span-2 md:row-span-1" },
 ];
 
 export default function GallerySection() {
@@ -33,7 +34,7 @@ export default function GallerySection() {
             </h2>
           </motion.div>
 
-          <Link href="#" className="group flex items-center gap-3 text-gold hover:text-cream transition-colors text-xs md:text-sm font-semibold tracking-widest uppercase pb-2 border-b border-gold/30 hover:border-cream shrink-0">
+          <Link href="/gallery" className="group flex items-center gap-3 text-gold hover:text-cream transition-colors text-xs md:text-sm font-semibold tracking-widest uppercase pb-2 border-b border-gold/30 hover:border-cream shrink-0">
             View Full Gallery
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </Link>
@@ -50,10 +51,12 @@ export default function GallerySection() {
               transition={{ duration: 0.6, delay: i * 0.1 }}
               className={`relative rounded-2xl overflow-hidden group cursor-pointer ${img.span || 'col-span-1 row-span-1'}`}
             >
-              <img
+              <Image
                 src={img.src}
                 alt={img.alt}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-maroon-dark/90 via-maroon-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 md:p-8">
                 <span className="text-gold font-script text-2xl md:text-3xl translate-y-4 group-hover:translate-y-0 transition-transform duration-500">{img.alt}</span>

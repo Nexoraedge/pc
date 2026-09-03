@@ -5,19 +5,23 @@ import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Play } from "lucide-react";
+import Image from "next/image";
 
-const CATEGORIES = ["All", "Weddings", "Corporate", "Birthdays", "Videos"];
+const CATEGORIES = ["All", "Premium Displays", "Live Counters", "Setup & Decor"];
 
-const GALLERY_ITEMS = [
-  { id: 1, type: "image", category: "Weddings", src: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80", title: "Royal Mandap Setup" },
-  { id: 2, type: "image", category: "Corporate", src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80", title: "Executive Gala Dinner" },
-  { id: 3, type: "video", category: "Videos", src: "https://images.unsplash.com/photo-1478146896981-b80fe463b330?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80", title: "Grand Entrance Highlights" },
-  { id: 4, type: "image", category: "Birthdays", src: "https://images.unsplash.com/photo-1530103862679-de809de96055?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80", title: "Sweet 16 Celebration" },
-  { id: 5, type: "image", category: "Weddings", src: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80", title: "Bridal Feast" },
-  { id: 6, type: "image", category: "Corporate", src: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80", title: "Product Launch Catering" },
-  { id: 7, type: "video", category: "Videos", src: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80", title: "Behind the Scenes Kitchen" },
-  { id: 8, type: "image", category: "Birthdays", src: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80", title: "Midnight Dessert Table" },
-  { id: 9, type: "image", category: "Weddings", src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80", title: "Outdoor Reception" },
+const GALLERY_ITEMS: { id: number; type: string; category: string; src: string; title: string }[] = [
+  { id: 1, type: "image", category: "Premium Displays", src: "/gallery-photos/Fruit_Counter.jpeg", title: "Royal Fruit Skewers Display" },
+  { id: 2, type: "image", category: "Premium Displays", src: "/gallery-photos/Fruit_Chaat.jpeg", title: "Artisanal Exotic Fruit Carvings" },
+  { id: 3, type: "image", category: "Live Counters", src: "/gallery-photos/Live_Tawa_sabji.jpeg", title: "Live Tawa Special Sabji" },
+  { id: 4, type: "image", category: "Setup & Decor", src: "/gallery-photos/Stall.jpeg", title: "Elegant Buffet Setup" },
+  { id: 5, type: "image", category: "Setup & Decor", src: "/gallery-photos/Table.jpeg", title: "Royal Dining Arrangements" },
+  { id: 6, type: "image", category: "Setup & Decor", src: "/gallery-photos/Counter.jpeg", title: "Premium Grand Entry Setup" },
+  { id: 7, type: "image", category: "Premium Displays", src: "/gallery-photos/table-2.jpeg", title: "Luxury Floral Decor" },
+  { id: 8, type: "image", category: "Setup & Decor", src: "/gallery-photos/Table-3.jpeg", title: "Royal Wedding Arrangements" },
+  { id: 9, type: "image", category: "Premium Displays", src: "/gallery-photos/Counter-evening.jpeg", title: "Exotic Desserts Display" },
+  { id: 10, type: "image", category: "Live Counters", src: "/gallery-photos/Counter-eve-2.jpeg", title: "Live Chaat Counter" },
+  { id: 11, type: "image", category: "Premium Displays", src: "/gallery-photos/Counter-morning-setup.jpeg", title: "Signature Beverages" },
+  { id: 12, type: "image", category: "Setup & Decor", src: "/gallery-photos/Round-tale-decor.jpeg", title: "Magnificent Banquet Design" },
 ];
 
 export default function GalleryPage() {
@@ -77,45 +81,59 @@ export default function GalleryPage() {
           className="columns-1 md:columns-2 lg:columns-3 gap-6 md:gap-8 space-y-6 md:space-y-8"
         >
           <AnimatePresence mode="popLayout">
-            {filteredItems.map((item) => (
-              <motion.div
-                key={item.id}
-                layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.4 }}
-                className="group relative rounded-2xl overflow-hidden bg-white border border-maroon-dark/10 shadow-sm hover:shadow-xl transition-shadow cursor-pointer break-inside-avoid"
+            {filteredItems.length === 0 ? (
+              <motion.div 
+                initial={{ opacity: 0 }} 
+                animate={{ opacity: 1 }} 
+                className="col-span-full py-20 text-center"
               >
-                <img 
-                  src={item.src} 
-                  alt={item.title} 
-                  className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
-                />
-                
-                {/* Overlay Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
-                
-                {/* Content */}
-                <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                  <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-gold mb-2">
-                      {item.category}
-                    </p>
-                    <h3 className="font-display text-2xl text-cream">
-                      {item.title}
-                    </h3>
-                  </div>
-                </div>
-
-                {/* Video Play Icon Indicator */}
-                {item.type === "video" && (
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-black/40 backdrop-blur-md border border-gold/50 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                    <Play className="w-6 h-6 text-gold fill-gold ml-1" />
-                  </div>
-                )}
+                <p className="text-maroon-dark/50 text-xl font-display">New gallery items coming soon.</p>
               </motion.div>
-            ))}
+            ) : (
+              filteredItems.map((item) => (
+                <motion.div
+                  key={item.id}
+                  layout
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.4 }}
+                  className="group relative rounded-2xl overflow-hidden bg-white border border-maroon-dark/10 shadow-sm hover:shadow-xl transition-shadow cursor-pointer break-inside-avoid"
+                >
+                  <div className="relative w-full aspect-[4/3]">
+                    <Image 
+                      src={item.src} 
+                      alt={item.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                  </div>
+                  
+                  {/* Overlay Gradient (Only at the bottom to make text readable) */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  {/* Content (Visible on Hover) */}
+                  <div className="absolute inset-0 p-8 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                      <p className="text-[10px] font-bold uppercase tracking-widest text-gold mb-2">
+                        {item.category}
+                      </p>
+                      <h3 className="font-display text-2xl text-cream drop-shadow-md">
+                        {item.title}
+                      </h3>
+                    </div>
+                  </div>
+
+                  {/* Video Play Icon Indicator */}
+                  {item.type === "video" && (
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-black/40 backdrop-blur-md border border-gold/50 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                      <Play className="w-6 h-6 text-gold fill-gold ml-1" />
+                    </div>
+                  )}
+                </motion.div>
+              ))
+            )}
           </AnimatePresence>
         </motion.div>
       </section>

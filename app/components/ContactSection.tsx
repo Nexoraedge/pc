@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Phone, Mail, MessageCircle } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function ContactSection() {
   const WHATSAPP_NUMBER = "919982310686";
@@ -13,11 +14,12 @@ export default function ContactSection() {
     <section className="relative w-full bg-maroon-dark py-24 md:py-32 overflow-hidden border-t border-gold/20">
       
       {/* Background Parallax Image with Overlay */}
-      <div className="absolute inset-0 opacity-[0.03] grayscale">
-        <img 
-          src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+      <div className="absolute inset-0 opacity-10 grayscale mix-blend-overlay">
+        <Image 
+          src="/gallery-photos/Table-3.jpeg" 
           alt="Elegant Dining Setup" 
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover"
         />
       </div>
 
@@ -41,7 +43,7 @@ export default function ContactSection() {
               <span className="font-script text-gold italic">Grand Feast</span>
             </h2>
             <p className="text-cream/70 text-base md:text-lg max-w-md mb-12">
-              We accept a limited number of events each year to ensure uncompromising quality and flawless execution. Reach out directly to secure your date.
+              We take a limited number of bookings to make sure every event is perfect. Contact us today to secure your date.
             </p>
 
             <div className="space-y-6">
@@ -82,7 +84,7 @@ export default function ContactSection() {
             
             <h3 className="font-display text-3xl md:text-4xl text-cream mb-4">Chat With Us</h3>
             <p className="text-cream/60 mb-10 max-w-sm">
-              Skip the forms. Message us directly on WhatsApp to check our availability, request a tasting, or discuss your custom menu.
+              Message us directly on WhatsApp to check availability, ask for a menu, or discuss pricing.
             </p>
             
             <Link 

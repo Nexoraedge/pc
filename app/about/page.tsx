@@ -5,25 +5,26 @@ import Footer from "../components/Footer";
 import { motion } from "framer-motion";
 import { ArrowRight, Star } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const TEAM_MEMBERS = [
   {
-    name: "Himanshu Jain",
+    name: "Lokesh Jain",
     role: "Founder & Visionary",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "/founder/Lokesh_Jain.png",
     description: "The visionary behind Parshwanath Caterers, bringing decades of pure vegetarian culinary excellence to life."
   },
   {
-    name: "Lokesh Jain",
-    role: "Executive Master Chef",
-    image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    description: "Award-winning culinary artist specializing in redefining traditional Indian vegetarian cuisine for modern luxury."
+    name: "Praveen Jain",
+    role: "Founder & Operations Head",
+    image: "/founder/Praveen_Jain.png",
+    description: "Driving the strategic vision and ensuring uncompromising quality across all of Parshwanath's premium events."
   },
   {
-    name: "Praveen Jain",
-    role: "Director of Events",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    description: "Orchestrating flawless, high-end events with immaculate attention to detail and flawless execution."
+    name: "Himanshu Jain",
+    role: "Event Specialist",
+    image: "/founder/Himanshu_Jain.png",
+    description: "An expert in luxury hospitality, having completed his Hotel Management from Marriott Hotel DangaH. Orchestrating flawless, high-end events with immaculate attention to detail."
   }
 ];
 
@@ -37,7 +38,7 @@ export default function AboutPage() {
         {/* Subtle Background Elements */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-maroon-dark/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-gold/10 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
-        
+
         <div className="relative z-10 max-w-4xl mx-auto">
           <p className="text-sm font-bold uppercase tracking-widest text-maroon-dark mb-4 flex items-center justify-center gap-2">
             <span className="w-8 h-[1px] bg-gold"></span>
@@ -45,10 +46,10 @@ export default function AboutPage() {
             <span className="w-8 h-[1px] bg-gold"></span>
           </p>
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-maroon-dark mb-6">
-            The <span className="font-script text-gold italic">Story</span> of Parshwanath
+            Parshwanath <span className="font-script text-gold italic">Caterers & Events</span>
           </h1>
           <p className="text-maroon-dark/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-            Elevating pure vegetarian catering to an art form. We don't just serve food; we craft unforgettable luxury experiences for your most treasured moments.
+            The best pure vegetarian catering service in Jaipur. We bring amazing food and luxury setups to your weddings and special events.
           </p>
         </div>
       </section>
@@ -56,8 +57,8 @@ export default function AboutPage() {
       {/* 2. The Brand Story */}
       <section className="py-20 px-6 md:px-12 lg:px-20 relative">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -68,10 +69,10 @@ export default function AboutPage() {
             </h2>
             <div className="space-y-6 text-maroon-dark/80 text-lg leading-relaxed">
               <p>
-                Founded on the principles of authenticity, purity, and uncompromising quality, Parshwanath Caterers has grown into a premier name in luxury vegetarian catering. 
+                Started with a simple goal: to provide the best Jain and pure vegetarian catering in Jaipur. Today, Parshwanath Caterers is a top choice for premium events.
               </p>
               <p>
-                We believe that pure vegetarian cuisine is not a limitation, but a vast canvas of flavors, textures, and aromas. From grand royal weddings to exclusive corporate galas, our dedicated culinary team sources the finest ingredients globally to curate menus that leave a lasting impression.
+                From big royal weddings to small private parties, we make sure every dish is perfect. Our team uses the best ingredients to make food that everyone will love.
               </p>
               <p className="font-bold text-maroon-dark flex items-center gap-2">
                 <Star className="w-5 h-5 text-gold fill-gold" />
@@ -80,15 +81,19 @@ export default function AboutPage() {
             </div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="grid grid-cols-2 gap-4 h-[600px]"
+            className="grid grid-cols-2 gap-4 h-[560px]"
           >
-            <img src="https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Catering Detail" className="w-full h-full object-cover rounded-2xl shadow-xl" />
-            <img src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Culinary Art" className="w-full h-full object-cover rounded-2xl shadow-xl mt-12" />
+            <div className="relative  rounded-2xl shadow-xl overflow-hidden">
+              <Image src="/gallery-photos/Stall.jpeg" alt="Premium Setup" fill className="object-cover" />
+            </div>
+            <div className="relative  rounded-2xl shadow-xl overflow-hidden mt-12">
+              <Image src="/gallery-photos/Table-3.jpeg" alt="Royal Dining Decor" fill className="object-cover" />
+            </div>
           </motion.div>
 
         </div>
@@ -105,7 +110,7 @@ export default function AboutPage() {
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {TEAM_MEMBERS.map((member, idx) => (
-            <motion.div 
+            <motion.div
               key={member.name}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -114,9 +119,9 @@ export default function AboutPage() {
               className="group text-center"
             >
               <div className="w-full aspect-[3/4] rounded-full overflow-hidden mb-8 relative border-4 border-cream shadow-xl mx-auto max-w-[300px]">
-                <img 
-                  src={member.image} 
-                  alt={member.name} 
+                <img
+                  src={member.image}
+                  alt={member.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 grayscale hover:grayscale-0"
                 />
                 <div className="absolute inset-0 bg-maroon-dark/20 group-hover:bg-transparent transition-colors duration-500"></div>
@@ -129,33 +134,37 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 4. Internship & Careers CTA */}
-      <section className="py-32 px-6 md:px-12 lg:px-20 relative overflow-hidden bg-maroon-dark text-cream">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1577219491135-ce391730fb2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
-        
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <h2 className="font-display text-5xl md:text-7xl mb-6">
-            Join The <span className="font-script text-gold italic">Legacy</span>
-          </h2>
-          <p className="text-cream/80 text-lg md:text-xl mb-12 max-w-2xl mx-auto">
-            Are you a passionate culinary artist or event management enthusiast? Parshwanath Caterers offers exclusive internship and career opportunities to shape the next generation of hospitality leaders.
-          </p>
-          
-          <div className="mb-12">
-            <p className="text-sm font-bold uppercase tracking-widest text-gold mb-6">Our Proud Alumni / Past Interns</p>
-            <div className="flex flex-wrap justify-center gap-4 md:gap-8">
-              {["Hardik Jain", "Suraj Shah", "Pankaj"].map((intern) => (
-                <div key={intern} className="px-6 py-3 bg-cream/5 border border-cream/20 rounded-full text-cream font-medium">
-                  {intern}
-                </div>
-              ))}
-            </div>
+      {/* 4. SEO FAQs */}
+      <section className="py-24 px-6 md:px-12 lg:px-20 bg-cream border-t border-maroon-dark/10">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="font-display text-4xl md:text-5xl text-maroon-dark mb-4">
+              Frequently Asked <span className="font-script text-gold italic">Questions</span>
+            </h2>
+            <p className="text-maroon-dark/70 text-lg">Everything you need to know about booking the best caterer in Jaipur.</p>
           </div>
 
-          <Link href="/contact" className="inline-flex items-center gap-3 px-10 py-4 bg-gold text-maroon-dark rounded-full font-bold uppercase tracking-widest text-sm hover:bg-cream hover:scale-105 transition-all shadow-[0_0_30px_rgba(212,175,55,0.3)]">
-            Apply For Internship
-            <ArrowRight className="w-4 h-4" />
-          </Link>
+          <div className="space-y-6">
+            <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-maroon-dark/5">
+              <h3 className="font-display text-2xl text-maroon-dark mb-3">Do you provide 100% Pure Veg and Jain Catering?</h3>
+              <p className="text-maroon-dark/80">Yes! We are proud to be the best pure veg and Jain caterer in Jaipur. We use a strictly vegetarian kitchen and have special menus for Jain food without onion or garlic.</p>
+            </div>
+
+            <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-maroon-dark/5">
+              <h3 className="font-display text-2xl text-maroon-dark mb-3">Which cities do you serve?</h3>
+              <p className="text-maroon-dark/80">While we are based in Jaipur, Rajasthan, we provide luxury destination wedding catering across India. We regularly travel for large-scale events.</p>
+            </div>
+
+            <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-maroon-dark/5">
+              <h3 className="font-display text-2xl text-maroon-dark mb-3">What kind of events do you cater?</h3>
+              <p className="text-maroon-dark/80">We cater all types of premium events including royal weddings, corporate galas, birthdays, high-tea parties, and private dinners.</p>
+            </div>
+
+            <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-maroon-dark/5">
+              <h3 className="font-display text-2xl text-maroon-dark mb-3">How do I book Parshwanath Caterers?</h3>
+              <p className="text-maroon-dark/80">You can easily contact us through our website's contact form, call us at +91 9982310686, or message us on WhatsApp to discuss your event menu and pricing.</p>
+            </div>
+          </div>
         </div>
       </section>
 

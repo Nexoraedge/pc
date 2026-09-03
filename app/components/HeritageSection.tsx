@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Leaf } from "lucide-react";
+import Image from "next/image";
 
 export default function HeritageSection() {
   return (
@@ -31,20 +32,20 @@ export default function HeritageSection() {
 
             <div className="space-y-6 text-cream/70 text-base md:text-lg leading-relaxed">
               <p>
-                For over two decades, Parshwanath Caterers has redefined luxury dining with an unwavering commitment to 100% pure vegetarian cuisine. We believe that true culinary art requires no compromise.
+                For over 10 years, Parshwanath Caterers has provided the best 100% pure vegetarian food in Jaipur. We make sure every dish is perfect for your special day.
               </p>
               <p>
-                From the bustling live counters of grand destination weddings to intimate corporate banquets, our master chefs source only the finest, freshest ingredients to craft dishes that are as visually stunning as they are delicious.
+                Whether it is a big wedding or a small party, our expert chefs use the freshest ingredients to cook amazing food that your guests will love.
               </p>
             </div>
 
             <div className="mt-12 grid grid-cols-2 gap-8 border-t border-gold/20 pt-8">
               <div>
-                <h4 className="font-display text-4xl text-cream font-bold mb-2">20+</h4>
+                <h4 className="font-display text-4xl text-cream font-bold mb-2">10+</h4>
                 <p className="text-xs md:text-sm uppercase tracking-widest font-semibold text-gold">Years of Legacy</p>
               </div>
               <div>
-                <h4 className="font-display text-4xl text-cream font-bold mb-2">50k+</h4>
+                <h4 className="font-display text-4xl text-cream font-bold mb-2">12k+</h4>
                 <p className="text-xs md:text-sm uppercase tracking-widest font-semibold text-gold">Happy Guests</p>
               </div>
             </div>
@@ -59,10 +60,11 @@ export default function HeritageSection() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="absolute top-0 right-0 w-[70%] h-[70%] rounded-2xl overflow-hidden shadow-2xl z-10"
             >
-              <img
-                src="https://images.unsplash.com/photo-1543353071-087092ec393a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              <Image
+                src="/gallery-photos/Fruit_Counter.jpeg"
                 alt="Luxury Catering Setup"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-700"
               />
             </motion.div>
 
@@ -73,10 +75,11 @@ export default function HeritageSection() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="absolute bottom-0 left-0 w-[60%] h-[55%] rounded-2xl overflow-hidden shadow-2xl border-4 border-[#160c0f] z-20"
             >
-              <img
-                src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              <Image
+                src="/gallery-photos/Counter-morning-setup.jpeg"
                 alt="Chef Plating Food"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-700"
               />
             </motion.div>
 
@@ -86,11 +89,12 @@ export default function HeritageSection() {
           </div>
 
           {/* Mobile Image (Simplified) */}
-          <div className="block lg:hidden w-full h-[350px] rounded-2xl overflow-hidden shadow-xl mt-8">
-            <img
-              src="https://images.unsplash.com/photo-1543353071-087092ec393a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+          <div className="block lg:hidden w-full h-[350px] relative rounded-2xl overflow-hidden shadow-xl mt-8">
+            <Image
+              src="/gallery-photos/Counter-evening.jpeg"
               alt="Luxury Catering Setup"
-              className="w-full h-full object-cover"
+              fill
+              className="object-cover"
             />
           </div>
 
