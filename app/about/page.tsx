@@ -28,6 +28,21 @@ const TEAM_MEMBERS = [
   }
 ];
 
+const INTERNS = [
+  {
+    slug: "pankaj",
+    name: "Pankaj",
+    role: "Media & Video Intern (BCA)",
+    duration: "2024"
+  },
+  {
+    slug: "tanmay-vijay",
+    name: "Tanmay Vijay",
+    role: "Management Intern (BBA)",
+    duration: "2024"
+  }
+];
+
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-cream text-maroon-dark font-sans selection:bg-gold selection:text-maroon-dark">
@@ -164,6 +179,28 @@ export default function AboutPage() {
               <h3 className="font-display text-2xl text-maroon-dark mb-3">How do I book Parshwanath Caterers?</h3>
               <p className="text-maroon-dark/80">You can easily contact us through our website's contact form, call us at +91 9982310686, or message us on WhatsApp to discuss your event menu and pricing.</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Interns Section */}
+      <section className="py-20 px-6 md:px-12 lg:px-24 bg-maroon-dark/5">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-maroon-dark mb-4">Our Interns</h2>
+            <p className="text-maroon-dark/70 max-w-2xl mx-auto text-lg">
+              We take pride in mentoring the next generation of hospitality and culinary experts.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {INTERNS.map((intern, i) => (
+              <Link href={`/interns/${intern.slug}`} key={i} className="group bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-maroon-dark/5 flex flex-col items-center text-center">
+                <h3 className="font-display text-2xl text-maroon-dark mb-2 group-hover:text-gold transition-colors">{intern.name}</h3>
+                <p className="text-gold font-bold tracking-widest uppercase text-xs mb-4">{intern.role}</p>
+                <p className="text-maroon-dark/60 text-sm">{intern.duration}</p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import styles from "./MenuCarousel.module.css";
@@ -55,15 +56,13 @@ export default function MenuCarouselSection() {
 
             {/* Center 3D Avatar */}
             <div className={`${styles.centerAvatar}`}>
-              <motion.img
-                initial={{ y: 150, opacity: 0, scale: 0.8 }}
-                whileInView={{ y: 0, opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.7, type: "spring", bounce: 0.5 }}
-                src="/images/waiter-3.png"
-                alt="Master Chef"
-                className="w-full h-full object-contain drop-shadow-[0_0_60px_rgba(212,175,55,0.25)]"
-              />
+                <Image
+                  src="/images/waiter-3.png"
+                  alt="Master Chef"
+                  fill
+                  style={{ objectFit: "contain" }}
+                  className="absolute inset-0 drop-shadow-[0_0_60px_rgba(212,175,55,0.25)]"
+                />
             </div>
 
             {EXPERTISE.map((item, i) => {
@@ -77,7 +76,7 @@ export default function MenuCarouselSection() {
                     initial={{ y: 50, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.6, delay: 0.3 + (i * 0.05), type: "spring" }}
+                    transition={{ duration: 0.6, type: "spring" }}
                     className="w-full h-full flex flex-col items-center justify-center"
                   >
                     <div className={styles.imgWrapper}>

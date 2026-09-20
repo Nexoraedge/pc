@@ -103,7 +103,7 @@ export default function HeroSection() {
           transition={{ delay: 0.7, duration: 0.8 }}
           className="w-16 md:w-24 lg:w-28 h-32 md:h-48 lg:h-56 rounded-full overflow-hidden border-2 border-white shadow-xl relative mb-2 md:mb-6"
         >
-          <Image src="/gallery-photos/stall.jpeg" alt="Luxury Table Setup" fill sizes="120px" className="object-cover" />
+          <Image src="/gallery-photos/Stall.jpeg" alt="Luxury Table Setup" fill sizes="120px" className="object-cover" />
         </motion.div>
 
         {/* Pill 3 (Highest - Center Focus) */}
