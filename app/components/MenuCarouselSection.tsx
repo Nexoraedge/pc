@@ -74,8 +74,7 @@ export default function MenuCarouselSection() {
                 >
                   <motion.div
                     initial={{ y: 50, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    viewport={{ once: true, margin: "-100px" }}
+                    animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.6, type: "spring" }}
                     className="w-full h-full flex flex-col items-center justify-center"
                   >

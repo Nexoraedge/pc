@@ -9,7 +9,7 @@ const INTERNS = [
     slug: "pankaj-singh-rathore",
     name: "Pankaj singh rathore",
     role: "Media & Video Intern (BCA)",
-    duration: "2024",
+    duration: "Aug-Sept 2026",
     description: "Pankaj, pursuing his BCA, brought his technical and creative skills to our team. He played a key role in video shooting and media production, capturing the essence of our luxury events.",
     skills: ["Video Shooting", "Media Production", "Creative Direction"]
   },
@@ -17,7 +17,7 @@ const INTERNS = [
     slug: "tanmay-vijay",
     name: "Tanmay Vijay",
     role: "Management Intern (BBA)",
-    duration: "2024",
+    duration: "Aug-Sept 2026",
     description: "Tanmay, pursuing his BBA, provided excellent management support during our peak season. His organizational skills and dedication helped streamline our event operations.",
     skills: ["Event Operations", "Management", "Organization"]
   }
