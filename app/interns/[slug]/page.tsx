@@ -6,8 +6,8 @@ import Footer from "@/app/components/Footer";
 // We'll use the same data as the about page. In a real app, this would be a DB or CMS fetch.
 const INTERNS = [
   {
-    slug: "pankaj",
-    name: "Pankaj",
+    slug: "pankaj-singh-rathore",
+    name: "Pankaj singh rathore",
     role: "Media & Video Intern (BCA)",
     duration: "2024",
     description: "Pankaj, pursuing his BCA, brought his technical and creative skills to our team. He played a key role in video shooting and media production, capturing the essence of our luxury events.",
@@ -42,11 +42,11 @@ export default function InternPage({ params }: { params: { slug: string } }) {
 
       <section className="flex-grow pt-40 pb-20 px-6 md:px-12 lg:px-24 flex items-center justify-center">
         <div className="max-w-3xl w-full bg-white p-10 md:p-16 rounded-3xl shadow-lg border border-maroon-dark/5 text-center">
-          
+
           <Link href="/about" className="inline-block mb-8 text-sm text-gold hover:text-maroon-dark uppercase tracking-widest font-bold transition-colors">
             ← Back to About
           </Link>
-          
+
           <h1 className="font-display text-4xl md:text-5xl lg:text-7xl text-maroon-dark mb-4">{intern.name}</h1>
           <p className="text-gold font-bold tracking-widest uppercase text-sm md:text-base mb-2">{intern.role}</p>
           <p className="text-maroon-dark/60 text-sm mb-10">{intern.duration}</p>
