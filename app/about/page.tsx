@@ -30,9 +30,9 @@ const TEAM_MEMBERS = [
 
 const INTERNS = [
   {
-    slug: "pankaj-singh-rathore",
-    name: "Pankaj singh rathore",
-    role: "Media & Video Intern (BCA)",
+    slug: "hardik-jain",
+    name: "Hardik Jain",
+    role: "Software Developer Intern (BCA)",
     duration: "Aug-Sept 2026"
   },
   {

@@ -6,12 +6,12 @@ import Footer from "@/app/components/Footer";
 // We'll use the same data as the about page. In a real app, this would be a DB or CMS fetch.
 const INTERNS = [
   {
-    slug: "pankaj-singh-rathore",
-    name: "Pankaj singh rathore",
-    role: "Media & Video Intern (BCA)",
+    slug: "hardik-jain",
+    name: "Hardik Jain",
+    role: "Software Developer Intern (BCA)",
     duration: "Aug-Sept 2026",
-    description: "Pankaj, pursuing his BCA, brought his technical and creative skills to our team. He played a key role in video shooting and media production, capturing the essence of our luxury events.",
-    skills: ["Video Shooting", "Media Production", "Creative Direction"]
+    description: "Hardik, pursuing his BCA, brought his technical and creative skills to our team. He played a key role in software development and helped us to create a a perfect managemnet sofware for our company.",
+    skills: ["Software Development", "Management Software", "Creative Direction"]
   },
   {
     slug: "tanmay-vijay",
